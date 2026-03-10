@@ -68,5 +68,43 @@
             </div>
         </div>
     </section>
+
+    <section id="projetos" class="projetos-section">
+    <h2 class="titulo-secao">Meus Projetos</h2>
+    
+    <div class="coverflow-wrapper">
+        <button class="nav-btn btn-left" onclick="mudarProjeto(-1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        
+        <div class="coverflow-track" id="trackProjetos">
+            </div>
+
+        <button class="nav-btn btn-right" onclick="mudarProjeto(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <div class="info-projeto-ativo">
+        <h3 id="infoTitulo">Nome do Projeto</h3>
+        <p id="infoSubtitulo">Subtítulo ou Empresa</p>
+        <div class="tags-container" id="infoTags"></div>
+        <p class="dica-clique">Clique na imagem central para ver os detalhes</p>
+    </div>
+    </section>
+
+    <div id="projetoModal" class="modal">
+        <div class="modal-content">
+            <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+            <h2 id="modalTitulo">Nome do Projeto</h2>
+            <img id="modalImagem" src="" alt="Telas do Projeto" class="modal-img-destaque">
+            <div class="modal-descricao">
+                <h3>Minha Participação:</h3>
+                <p id="modalTexto">Descrição vai aqui...</p>
+                <a id="modalGithub" href="#" target="_blank" class="botao-github">Acessar GitHub</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

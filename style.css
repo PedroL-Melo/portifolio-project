@@ -242,3 +242,223 @@ header {
         box-shadow: -10px 10px 0px #222;
     }
 }
+
+/* --- Seção de Projetos (Coverflow) --- */
+.projetos-section {
+    padding: 80px 0;
+    background-color: #0a0a0a;
+    text-align: center;
+    overflow: hidden;
+}
+
+.titulo-secao {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.coverflow-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coverflow-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-projeto {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    border-radius: 15px;
+    background-color: #111;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.card-projeto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Posições das Cartas */
+.card-projeto.centro {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    opacity: 1;
+    border: 2px solid #1c3d72; /* Borda azul inspirada na sua ref */
+    box-shadow: 0 0 30px rgba(28, 61, 114, 0.4);
+}
+
+.card-projeto.esquerda {
+    transform: translateX(-60%) scale(0.8);
+    z-index: 2;
+    opacity: 0.4;
+    filter: brightness(0.4);
+}
+
+.card-projeto.direita {
+    transform: translateX(60%) scale(0.8);
+    z-index: 2;
+    opacity: 0.4;
+    filter: brightness(0.4);
+}
+
+.card-projeto.oculto {
+    transform: translateX(0) scale(0.6);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Botões de Seta Quadrados */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #111;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover { background-color: #333; }
+.btn-left { left: 5%; }
+.btn-right { right: 5%; }
+
+/* Textos Embaixo */
+.info-projeto-ativo { margin-top: 20px; }
+.info-projeto-ativo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.info-projeto-ativo p#infoSubtitulo {
+    color: #888;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.tags-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tag {
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.dica-clique { font-size: 0.85rem; color: #555; font-style: italic; }
+
+/* --- Janela Modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    color: #fff;
+    position: relative;
+    animation: abrirAnimacao 0.3s ease-out;
+}
+@keyframes abrirAnimacao {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fechar-modal:hover { color: #fff; }
+.modal-img-destaque {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #000;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.modal-descricao h3 {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+.modal-descricao p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+.botao-github {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.botao-github:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Responsividade Básica */
+@media (max-width: 850px) {
+    .card-projeto { width: 300px; height: 180px; }
+    .btn-left { left: 0; }
+    .btn-right { right: 0; }
+}

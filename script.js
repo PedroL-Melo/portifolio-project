@@ -98,3 +98,35 @@ window.onclick = function(event) {
 
 // Inicia tudo
 renderizarCarrossel();
+
+// Seleciona o menu lá do topo
+const menuSuperior = document.querySelector('header');
+
+function abrirModal(titulo, descricao, imagem, linkGithub) {
+    document.getElementById('modalTitulo').innerText = titulo;
+    document.getElementById('modalTexto').innerText = descricao;
+    document.getElementById('modalImagem').src = imagem;
+    document.getElementById('modalGithub').href = linkGithub;
+    
+    // Mostra o modal
+    modal.style.display = 'block';
+
+    // ESCONDE O MENU para não tampar o 'X'
+    menuSuperior.style.display = 'none';
+}
+
+function fecharModal() {
+    // Esconde o modal
+    modal.style.display = 'none';
+
+    // MOSTRA O MENU NOVAMENTE
+    menuSuperior.style.display = 'flex';
+}
+
+// Ajuste extra: caso a pessoa clique fora da caixa, o menu também deve voltar
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        menuSuperior.style.display = 'flex'; // Garante que o menu volte aqui também
+    }
+}

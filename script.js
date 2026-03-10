@@ -4,9 +4,9 @@ const meusProjetos = [
         titulo: "Luminous Gym",
         subtitulo: "Arquitetura Back-end",
         tags: ["BACK-END", "POO", "MVC"],
-        img: "img-luminous.jpg",
+        img: "images/tela_luminous.png",
         desc: "Desenvolvimento do site para uma academia exclusiva para mulheres. Trabalhei no back-end com criação de classes, arquitetura MVC e correção de erros no Banco de Dados.",
-        github: "https://github.com/seu-usuario/luminous-gym"
+        github: "https://github.com/RenatoSZA/Alvaros-Project"
     },
     {
         titulo: "Projeto Decifra",
@@ -14,15 +14,15 @@ const meusProjetos = [
         tags: ["BACK-END", "IA", "CHATBOT"],
         img: "images/tela1decifra.png",
         desc: "Atuei no desenvolvimento da arquitetura back-end e no desenvolvimento dos jogos. O foco foi principalmente na criação de um chatbot com inteligência atificial para o auxílio dos alunos em seu estudo.",
-        github: "https://github.com/seu-usuario/decifra"
+        github: "https://github.com/PedroL-Melo/DECIFRA"
     },
     {
         titulo: "Doom via XSS",
         subtitulo: "Segurança Web & PoC",
         tags: ["SEGURANÇA WEB", "XSS", "JAVASCRIPT", "PENTEST"],
-        img: "img-doom-xss.jpg",
+        img: "images/xssDoom.png",
         desc: "Uma Prova de Conceito (PoC) demonstrando a exploração de uma vulnerabilidade de Cross-Site Scripting (XSS). O payload injetado foi utilizado para carregar e executar o clássico jogo Doom direto no navegador, provando o impacto da falha de forma criativa.",
-        github: "https://github.com/seu-usuario/doom-xss"
+        github: "https://github.com/PedroL-Melo/js-doom-injector"
     },
 ];
 
